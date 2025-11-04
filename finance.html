@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planning | AgriSmart Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/finance.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>AgriSmart Pro</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="crop-planning.html" class="nav-link dropdown-toggle">Crop Planning <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="planting-calendar.html"><i class="fas fa-calendar-alt"></i> Planting Calendar</a></li>
+                            <li><a href="irrigation-schedule.html"><i class="fas fa-tint"></i> Irrigation Schedule</a></li>
+                            <li><a href="crop-rotation-plan.html"><i class="fas fa-clipboard-list"></i> Crop Rotation Plan</a></li>
+                            <li><a href="activity-calendar.html"><i class="fas fa-calendar-day"></i> Activity Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="livestock.html" class="nav-link dropdown-toggle">Livestock <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="dairy-cattle.html"><i class="fas fa-cow"></i> Dairy Cattle Management</a></li>
+                            <li><a href="poultry-management.html"><i class="fas fa-egg"></i> Poultry Management</a></li>
+                            <li><a href="swine-management.html"><i class="fas fa-piggy-bank"></i> Swine Management</a></li>
+                            <li><a href="health-monitoring.html"><i class="fas fa-heartbeat"></i> Health Monitoring</a></li>
+                            <li><a href="weight-tracking.html"><i class="fas fa-weight"></i> Weight Tracking</a></li>
+                            <li><a href="vaccination-schedule.html"><i class="fas fa-syringe"></i> Vaccination Schedule</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="finance.html" class="nav-link dropdown-toggle active">Finance <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="financial-summary.html"><i class="fas fa-money-bill-wave"></i> Financial Summary</a></li>
+                            <li><a href="expense-breakdown.html"><i class="fas fa-chart-pie"></i> Expense Breakdown</a></li>
+                            <li><a href="investment-opportunities.html"><i class="fas fa-piggy-bank"></i> Investment Opportunities</a></li>
+                            <li><a href="budget-planning.html"><i class="fas fa-clipboard-check"></i> Budget Planning</a></li>
+                            <li><a href="investment-calculator.html"><i class="fas fa-calculator"></i> Investment Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background Simulation - Financial Data Flow -->
+    <div class="background-simulation finance-simulation">
+        <div class="simulation-overlay"></div>
+        <div class="data-flow-animation">
+            <div class="flow-container">
+                <div class="data-node" style="top: 20%; left: 10%;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="data-node" style="top: 40%; left: 30%;">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="data-node" style="top: 60%; left: 50%;">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="data-node" style="top: 80%; left: 70%;">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="data-node" style="top: 30%; left: 90%;">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="flow-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Finance Content -->
+    <section class="page-content">
+        <div class="container">
+            <h2 class="section-title">Financial Planning & Budget</h2>
+            <p class="section-subtitle">Track expenses, forecast revenue, and make informed investment decisions for your farm</p>
+            
+            <div class="finance-overview">
+                <div class="finance-card">
+                    <h3><i class="fas fa-money-bill-wave"></i> Financial Summary</h3>
+                    <div class="summary-stats">
+                        <div class="summary-item">
+                            <span class="label">Projected Revenue</span>
+                            <span class="value">$24,850</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Operating Expenses</span>
+                            <span class="value">$12,430</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Net Profit</span>
+                            <span class="value profit">$12,420</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Return on Investment</span>
+                            <span class="value">18.5%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="finance-card">
+                    <h3><i class="fas fa-chart-pie"></i> Expense Breakdown</h3>
+                    <div class="chart-container">
+                        <canvas id="expenseChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+                
+                <div class="finance-card">
+                    <h3><i class="fas fa-piggy-bank"></i> Investment Opportunities</h3>
+                    <div class="investment-list">
+                        <div class="investment-item">
+                            <div class="investment-info">
+                                <h4>Automated Irrigation</h4>
+                                <p>Smart water management system</p>
+                            </div>
+                            <div class="investment-roi">
+                                <span class="roi-value">22%</span>
+                                <span class="roi-label">ROI</span>
+                            </div>
+                        </div>
+                        <div class="investment-item">
+                            <div class="investment-info">
+                                <h4>Solar Power System</h4>
+                                <p>Renewable energy for farm operations</p>
+                            </div>
+                            <div class="investment-roi">
+                                <span class="roi-value">18%</span>
+                                <span class="roi-label">ROI</span>
+                            </div>
+                        </div>
+                        <div class="investment-item">
+                            <div class="investment-info">
+                                <h4>Greenhouse Expansion</h4>
+                                <p>Year-round crop production</p>
+                            </div>
+                            <div class="investment-roi">
+                                <span class="roi-value">26%</span>
+                                <span class="roi-label">ROI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Budget Planning -->
+            <div class="budget-planning">
+                <h3 class="section-title">Budget Planning</h3>
+                <div class="budget-controls">
+                    <div class="budget-category">
+                        <h4>Crop Production Budget</h4>
+                        <div class="budget-slider">
+                            <input type="range" min="5000" max="20000" value="12500" class="slider" id="cropBudget">
+                            <div class="slider-labels">
+                                <span>$5,000</span>
+                                <span id="cropBudgetValue">$12,500</span>
+                                <span>$20,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-category">
+                        <h4>Livestock Budget</h4>
+                        <div class="budget-slider">
+                            <input type="range" min="3000" max="15000" value="8500" class="slider" id="livestockBudget">
+                            <div class="slider-labels">
+                                <span>$3,000</span>
+                                <span id="livestockBudgetValue">$8,500</span>
+                                <span>$15,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-category">
+                        <h4>Equipment & Maintenance</h4>
+                        <div class="budget-slider">
+                            <input type="range" min="2000" max="10000" value="4500" class="slider" id="equipmentBudget">
+                            <div class="slider-labels">
+                                <span>$2,000</span>
+                                <span id="equipmentBudgetValue">$4,500</span>
+                                <span>$10,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="budget-summary">
+                    <div class="total-budget">
+                        <span>Total Budget:</span>
+                        <span id="totalBudgetValue">$25,500</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="saveBudget()">Save Budget Plan</button>
+                </div>
+            </div>
+
+            <!-- Investment Calculator -->
+            <div class="investment-calculator">
+                <h3 class="section-title">Investment Calculator</h3>
+                <p>Calculate the potential return on investment for new farm equipment or expansion projects</p>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="investmentType">Investment Type</label>
+                        <select id="investmentType">
+                            <option value="irrigation">Automated Irrigation System</option>
+                            <option value="solar">Solar Power Installation</option>
+                            <option value="greenhouse">Greenhouse Expansion</option>
+                            <option value="livestock">Livestock Monitoring System</option>
+                            <option value="equipment">New Farming Equipment</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="investmentAmount">Investment Amount ($)</label>
+                        <input type="number" id="investmentAmount" value="10000" min="1000" step="500">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expectedLifespan">Expected Lifespan (years)</label>
+                        <input type="number" id="expectedLifespan" value="5" min="1" max="20">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="annualSavings">Expected Annual Savings ($)</label>
+                        <input type="number" id="annualSavings" value="2200" min="100" step="100">
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" onclick="calculateROI()">
+                    <i class="fas fa-calculator"></i> Calculate ROI
+                </button>
+                
+                <div class="calculator-result" id="roiResult">
+                    <h4>Investment Projection</h4>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <span>Payback Period</span>
+                            <span id="paybackPeriod">4.5 years</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Total Return</span>
+                            <span id="totalReturn">$11,000</span>
+                        </div>
+                        <div class="result-item">
+                            <span>ROI</span>
+                            <span id="roiPercentage">22%</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Net Profit</span>
+                            <span id="netProfit">$1,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                &copy; 2023 AgriSmart Pro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/finance.js"></script>
+</body>
+</html>

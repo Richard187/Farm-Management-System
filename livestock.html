@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestock Management | AgriSmart Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/livestock.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>AgriSmart Pro</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="crop-planning.html" class="nav-link dropdown-toggle">Crop Planning <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="planting-calendar.html"><i class="fas fa-calendar-alt"></i> Planting Calendar</a></li>
+                            <li><a href="irrigation-schedule.html"><i class="fas fa-tint"></i> Irrigation Schedule</a></li>
+                            <li><a href="crop-rotation-plan.html"><i class="fas fa-clipboard-list"></i> Crop Rotation Plan</a></li>
+                            <li><a href="activity-calendar.html"><i class="fas fa-calendar-day"></i> Activity Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="livestock.html" class="nav-link dropdown-toggle active">Livestock <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="dairy-cattle.html"><i class="fas fa-cow"></i> Dairy Cattle Management</a></li>
+                            <li><a href="poultry-management.html"><i class="fas fa-egg"></i> Poultry Management</a></li>
+                            <li><a href="swine-management.html"><i class="fas fa-piggy-bank"></i> Swine Management</a></li>
+                            <li><a href="health-monitoring.html"><i class="fas fa-heartbeat"></i> Health Monitoring</a></li>
+                            <li><a href="weight-tracking.html"><i class="fas fa-weight"></i> Weight Tracking</a></li>
+                            <li><a href="vaccination-schedule.html"><i class="fas fa-syringe"></i> Vaccination Schedule</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="finance.html" class="nav-link dropdown-toggle">Finance <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="financial-summary.html"><i class="fas fa-money-bill-wave"></i> Financial Summary</a></li>
+                            <li><a href="expense-breakdown.html"><i class="fas fa-chart-pie"></i> Expense Breakdown</a></li>
+                            <li><a href="investment-opportunities.html"><i class="fas fa-piggy-bank"></i> Investment Opportunities</a></li>
+                            <li><a href="budget-planning.html"><i class="fas fa-clipboard-check"></i> Budget Planning</a></li>
+                            <li><a href="investment-calculator.html"><i class="fas fa-calculator"></i> Investment Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background Simulation - Livestock Animation -->
+    <div class="background-simulation livestock-simulation">
+        <div class="simulation-overlay"></div>
+        <div class="pasture-animation">
+            <div class="pasture">
+                <div class="grass"></div>
+                <div class="animals">
+                    <div class="animal cow" style="left: 20%;">
+                        <i class="fas fa-cow"></i>
+                    </div>
+                    <div class="animal chicken" style="left: 50%;">
+                        <i class="fas fa-egg"></i>
+                    </div>
+                    <div class="animal pig" style="left: 80%;">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                </div>
+                <div class="barn">
+                    <i class="fas fa-home"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Livestock Content -->
+    <section class="page-content">
+        <div class="container">
+            <h2 class="section-title">Livestock Management</h2>
+            <p class="section-subtitle">Monitor animal health, track production, and optimize feeding with smart livestock management tools</p>
+            
+            <div class="livestock-overview">
+                <div class="livestock-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-cow"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">42</div>
+                            <div class="stat-label">Dairy Cattle</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-egg"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">125</div>
+                            <div class="stat-label">Laying Hens</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">68</div>
+                            <div class="stat-label">Swine</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">94%</div>
+                            <div class="stat-label">Health Score</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="livestock-grid">
+                <div class="livestock-card">
+                    <div class="livestock-header">
+                        <div class="livestock-icon">
+                            <i class="fas fa-cow"></i>
+                        </div>
+                        <h3>Dairy Cattle</h3>
+                    </div>
+                    <div class="livestock-body">
+                        <div class="livestock-stats">
+                            <div class="stat">
+                                <div class="stat-value">42</div>
+                                <div class="stat-label">Total Head</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">38</div>
+                                <div class="stat-label">Milking</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4</div>
+                                <div class="stat-label">Calves</div>
+                            </div>
+                        </div>
+                        <div class="health-indicator">
+                            <div class="health-bar" style="width: 92%;"></div>
+                        </div>
+                        <div class="production-data">
+                            <div class="data-item">
+                                <span>Avg. Milk Production:</span>
+                                <span>6.2 gal/day</span>
+                            </div>
+                            <div class="data-item">
+                                <span>Next Vet Visit:</span>
+                                <span>May 15, 2023</span>
+                            </div>
+                            <div class="data-item">
+                                <span>Feed Schedule:</span>
+                                <span>5 AM, 1 PM, 7 PM</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline" onclick="showCattleDetails()">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="livestock-card">
+                    <div class="livestock-header">
+                        <div class="livestock-icon">
+                            <i class="fas fa-egg"></i>
+                        </div>
+                        <h3>Poultry</h3>
+                    </div>
+                    <div class="livestock-body">
+                        <div class="livestock-stats">
+                            <div class="stat">
+                                <div class="stat-value">125</div>
+                                <div class="stat-label">Laying Hens</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">112</div>
+                                <div class="stat-label">Daily Eggs</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">89%</div>
+                                <div class="stat-label">Production Rate</div>
+                            </div>
+                        </div>
+                        <div class="health-indicator">
+                            <div class="health-bar" style="width: 95%;"></div>
+                        </div>
+                        <div class="production-data">
+                            <div class="data-item">
+                                <span>Feed Consumption:</span>
+                                <span>25 lbs/day</span>
+                            </div>
+                            <div class="data-item">
+                                <span>Next Rotation:</span>
+                                <span>April 28, 2023</span>
+                            </div>
+                            <div class="data-item">
+                                <span>Water System:</span>
+                                <span>Automated Nipples</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline" onclick="showPoultryDetails()">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="livestock-card">
+                    <div class="livestock-header">
+                        <div class="livestock-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <h3>Swine</h3>
+                    </div>
+                    <div class="livestock-body">
+                        <div class="livestock-stats">
+                            <div class="stat">
+                                <div class="stat-value">68</div>
+                                <div class="stat-label">Total Head</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Sows</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">56</div>
+                                <div class="stat-label">Piglets</div>
+                            </div>
+                        </div>
+                        <div class="health-indicator">
+                            <div class="health-bar" style="width: 88%;"></div>
+                        </div>
+                        <div class="production-data">
+                            <div class="data-item">
+                                <span>Avg. Weight Gain:</span>
+                                <span>1.8 lbs/day</span>
+                            </div>
+                            <div class="data-item">
+                                <span>Next Weaning:</span>
+                                <span>May 5, 2023</span>
+                            </div>
+                            <div class="data-item">
+                                <span>Feed Type:</span>
+                                <span>Grower Mix</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline" onclick="showSwineDetails()">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Livestock Images Gallery -->
+            <div class="livestock-gallery">
+                <h3 class="section-title">Livestock Gallery</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image-wrapper">
+                            <img src="images/livestock.jpg" alt="Livestock 1" class="gallery-image">
+                            <div class="image-overlay">
+                                <h4>Livestock 1</h4>
+                                <p>Our healthy dairy cattle herd</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image-wrapper">
+                            <img src="images/livestock2.jpg" alt="Livestock 2" class="gallery-image">
+                            <div class="image-overlay">
+                                <h4>Livestock 2</h4>
+                                <p>Poultry and livestock management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Monitoring -->
+            <div class="health-monitoring">
+                <h3 class="section-title">Health Monitoring</h3>
+                <div class="monitoring-grid">
+                    <div class="monitoring-card">
+                        <h4><i class="fas fa-temperature-high"></i> Temperature Alerts</h4>
+                        <div class="alert-status normal">
+                            <i class="fas fa-check-circle"></i>
+                            <span>All animals within normal range</span>
+                        </div>
+                    </div>
+                    <div class="monitoring-card">
+                        <h4><i class="fas fa-weight"></i> Weight Tracking</h4>
+                        <div class="progress-tracker">
+                            <div class="progress-item">
+                                <span>Cattle</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                                <span>+2.3%</span>
+                            </div>
+                            <div class="progress-item">
+                                <span>Swine</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 78%;"></div>
+                                </div>
+                                <span>+1.8%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="monitoring-card">
+                        <h4><i class="fas fa-syringe"></i> Vaccination Schedule</h4>
+                        <div class="vaccination-list">
+                            <div class="vaccine-item">
+                                <span>Cattle - Brucellosis</span>
+                                <span>Due: May 10</span>
+                            </div>
+                            <div class="vaccine-item">
+                                <span>Poultry - Newcastle</span>
+                                <span>Due: April 25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                &copy; 2023 AgriSmart Pro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/livestock.js"></script>
+</body>
+</html>

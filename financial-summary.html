@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Summary | AgriSmart Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/finance.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>AgriSmart Pro</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="crop-planning.html" class="nav-link dropdown-toggle">Crop Planning <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="planting-calendar.html"><i class="fas fa-calendar-alt"></i> Planting Calendar</a></li>
+                            <li><a href="irrigation-schedule.html"><i class="fas fa-tint"></i> Irrigation Schedule</a></li>
+                            <li><a href="crop-rotation-plan.html"><i class="fas fa-clipboard-list"></i> Crop Rotation Plan</a></li>
+                            <li><a href="activity-calendar.html"><i class="fas fa-calendar-day"></i> Activity Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="livestock.html" class="nav-link dropdown-toggle">Livestock <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="dairy-cattle.html"><i class="fas fa-cow"></i> Dairy Cattle Management</a></li>
+                            <li><a href="poultry-management.html"><i class="fas fa-egg"></i> Poultry Management</a></li>
+                            <li><a href="swine-management.html"><i class="fas fa-piggy-bank"></i> Swine Management</a></li>
+                            <li><a href="health-monitoring.html"><i class="fas fa-heartbeat"></i> Health Monitoring</a></li>
+                            <li><a href="weight-tracking.html"><i class="fas fa-weight"></i> Weight Tracking</a></li>
+                            <li><a href="vaccination-schedule.html"><i class="fas fa-syringe"></i> Vaccination Schedule</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="finance.html" class="nav-link dropdown-toggle">Finance <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="financial-summary.html"><i class="fas fa-money-bill-wave"></i> Financial Summary</a></li>
+                            <li><a href="expense-breakdown.html"><i class="fas fa-chart-pie"></i> Expense Breakdown</a></li>
+                            <li><a href="investment-opportunities.html"><i class="fas fa-piggy-bank"></i> Investment Opportunities</a></li>
+                            <li><a href="budget-planning.html"><i class="fas fa-clipboard-check"></i> Budget Planning</a></li>
+                            <li><a href="investment-calculator.html"><i class="fas fa-calculator"></i> Investment Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline" onclick="openLoginModal()"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button class="btn btn-primary" onclick="location.href='signup.html'"><i class="fas fa-user-plus"></i> Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background Simulation -->
+    <div class="background-simulation finance-simulation">
+        <div class="simulation-overlay"></div>
+    </div>
+
+    <!-- Financial Summary Content -->
+    <section class="page-content">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-money-bill-wave"></i> Financial Summary</h2>
+            <p class="section-subtitle">Complete overview of your farm's financial performance</p>
+            
+            <div class="finance-overview">
+                <div class="finance-card">
+                    <h3><i class="fas fa-chart-line"></i> Financial Overview</h3>
+                    <div class="summary-stats">
+                        <div class="summary-item">
+                            <span class="label">Projected Revenue</span>
+                            <span class="value">$24,850</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Operating Expenses</span>
+                            <span class="value">$12,430</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Net Profit</span>
+                            <span class="value profit">$12,420</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Return on Investment</span>
+                            <span class="value">18.5%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="finance-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Monthly Trends</h3>
+                    <div class="trend-analysis">
+                        <div class="trend-item">
+                            <span>Revenue Growth:</span>
+                            <span class="trend-up">+12.5%</span>
+                        </div>
+                        <div class="trend-item">
+                            <span>Expense Reduction:</span>
+                            <span class="trend-down">-5.2%</span>
+                        </div>
+                        <div class="trend-item">
+                            <span>Profit Margin:</span>
+                            <span class="trend-up">50.0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                &copy; 2023 AgriSmart Pro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/finance.js"></script>
+</body>
+</html>
+

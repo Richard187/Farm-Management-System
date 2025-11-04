@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Planning | AgriSmart Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/crop-planning.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>AgriSmart Pro</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="crop-planning.html" class="nav-link dropdown-toggle active">Crop Planning <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="planting-calendar.html"><i class="fas fa-calendar-alt"></i> Planting Calendar</a></li>
+                            <li><a href="irrigation-schedule.html"><i class="fas fa-tint"></i> Irrigation Schedule</a></li>
+                            <li><a href="crop-rotation-plan.html"><i class="fas fa-clipboard-list"></i> Crop Rotation Plan</a></li>
+                            <li><a href="activity-calendar.html"><i class="fas fa-calendar-day"></i> Activity Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="livestock.html" class="nav-link dropdown-toggle">Livestock <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="dairy-cattle.html"><i class="fas fa-cow"></i> Dairy Cattle Management</a></li>
+                            <li><a href="poultry-management.html"><i class="fas fa-egg"></i> Poultry Management</a></li>
+                            <li><a href="swine-management.html"><i class="fas fa-piggy-bank"></i> Swine Management</a></li>
+                            <li><a href="health-monitoring.html"><i class="fas fa-heartbeat"></i> Health Monitoring</a></li>
+                            <li><a href="weight-tracking.html"><i class="fas fa-weight"></i> Weight Tracking</a></li>
+                            <li><a href="vaccination-schedule.html"><i class="fas fa-syringe"></i> Vaccination Schedule</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="finance.html" class="nav-link dropdown-toggle">Finance <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="financial-summary.html"><i class="fas fa-money-bill-wave"></i> Financial Summary</a></li>
+                            <li><a href="expense-breakdown.html"><i class="fas fa-chart-pie"></i> Expense Breakdown</a></li>
+                            <li><a href="investment-opportunities.html"><i class="fas fa-piggy-bank"></i> Investment Opportunities</a></li>
+                            <li><a href="budget-planning.html"><i class="fas fa-clipboard-check"></i> Budget Planning</a></li>
+                            <li><a href="investment-calculator.html"><i class="fas fa-calculator"></i> Investment Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background Simulation - Planting Animation -->
+    <div class="background-simulation crop-simulation">
+        <div class="simulation-overlay"></div>
+        <div class="planting-animation">
+            <div class="field">
+                <div class="soil"></div>
+                <div class="tractor">
+                    <i class="fas fa-tractor"></i>
+                </div>
+                <div class="plants">
+                    <div class="plant" style="left: 10%;"></div>
+                    <div class="plant" style="left: 30%;"></div>
+                    <div class="plant" style="left: 50%;"></div>
+                    <div class="plant" style="left: 70%;"></div>
+                    <div class="plant" style="left: 90%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crop Planning Content -->
+    <section class="page-content">
+        <div class="container">
+            <h2 class="section-title">Smart Crop Planning</h2>
+            <p class="section-subtitle">Optimize your planting schedule, crop selection, and field management using data-driven insights</p>
+            
+            <div class="planning-cards">
+                <div class="plan-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Planting Calendar</h3>
+                    <p>Optimal planting dates based on your location, soil conditions, and weather forecasts</p>
+                    <div class="crop-selector">
+                        <select id="cropType">
+                            <option value="tomato">Tomatoes</option>
+                            <option value="corn">Corn</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="soybean">Soybeans</option>
+                        </select>
+                        <button class="btn btn-primary" onclick="calculatePlantingDate()">Calculate Best Dates</button>
+                    </div>
+                    <div class="planting-dates" id="plantingDates">
+                        <!-- Results will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <h3><i class="fas fa-tint"></i> Irrigation Schedule</h3>
+                    <p>Smart watering based on soil moisture sensors and weather predictions</p>
+                    <div class="irrigation-controls">
+                        <div class="moisture-level">
+                            <label>Current Soil Moisture: <span id="moistureValue">65%</span></label>
+                            <div class="moisture-bar">
+                                <div class="moisture-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline" onclick="startIrrigation()">Start Irrigation</button>
+                        <button class="btn btn-outline" onclick="stopIrrigation()">Stop Irrigation</button>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <h3><i class="fas fa-clipboard-list"></i> Crop Rotation Plan</h3>
+                    <p>Maximize soil health and minimize pests with strategic crop rotation</p>
+                    <div class="rotation-plan">
+                        <div class="rotation-year">
+                            <h4>Year 1</h4>
+                            <p>Corn → Legumes</p>
+                        </div>
+                        <div class="rotation-year">
+                            <h4>Year 2</h4>
+                            <p>Legumes → Small Grains</p>
+                        </div>
+                        <div class="rotation-year">
+                            <h4>Year 3</h4>
+                            <p>Small Grains → Corn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calendar-container">
+                <h3><i class="fas fa-calendar-day"></i> Farming Activity Calendar</h3>
+                <div class="calendar-header">
+                    <button class="btn btn-outline" onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <h4 id="currentMonth">April 2023</h4>
+                    <button class="btn btn-outline" onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                &copy; 2023 AgriSmart Pro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascript//main.js"></script>
+    <script src="javascript/crop-planning.js"></script>
+</body>
+</html>

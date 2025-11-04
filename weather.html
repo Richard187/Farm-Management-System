@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Intelligence | AgriSmart Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/weather.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>AgriSmart Pro</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="crop-planning.html" class="nav-link dropdown-toggle">Crop Planning <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="planting-calendar.html"><i class="fas fa-calendar-alt"></i> Planting Calendar</a></li>
+                            <li><a href="irrigation-schedule.html"><i class="fas fa-tint"></i> Irrigation Schedule</a></li>
+                            <li><a href="crop-rotation-plan.html"><i class="fas fa-clipboard-list"></i> Crop Rotation Plan</a></li>
+                            <li><a href="activity-calendar.html"><i class="fas fa-calendar-day"></i> Activity Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="livestock.html" class="nav-link dropdown-toggle">Livestock <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="dairy-cattle.html"><i class="fas fa-cow"></i> Dairy Cattle Management</a></li>
+                            <li><a href="poultry-management.html"><i class="fas fa-egg"></i> Poultry Management</a></li>
+                            <li><a href="swine-management.html"><i class="fas fa-piggy-bank"></i> Swine Management</a></li>
+                            <li><a href="health-monitoring.html"><i class="fas fa-heartbeat"></i> Health Monitoring</a></li>
+                            <li><a href="weight-tracking.html"><i class="fas fa-weight"></i> Weight Tracking</a></li>
+                            <li><a href="vaccination-schedule.html"><i class="fas fa-syringe"></i> Vaccination Schedule</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="finance.html" class="nav-link dropdown-toggle">Finance <i class="fas fa-plus"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="financial-summary.html"><i class="fas fa-money-bill-wave"></i> Financial Summary</a></li>
+                            <li><a href="expense-breakdown.html"><i class="fas fa-chart-pie"></i> Expense Breakdown</a></li>
+                            <li><a href="investment-opportunities.html"><i class="fas fa-piggy-bank"></i> Investment Opportunities</a></li>
+                            <li><a href="budget-planning.html"><i class="fas fa-clipboard-check"></i> Budget Planning</a></li>
+                            <li><a href="investment-calculator.html"><i class="fas fa-calculator"></i> Investment Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="weather.html" class="nav-link active">Weather</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background Simulation - Weather Animation -->
+    <div class="background-simulation weather-simulation">
+        <div class="simulation-overlay"></div>
+        <div class="weather-animation">
+            <div class="sky">
+                <div class="sun">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="cloud cloud-1">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <div class="cloud cloud-2">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <div class="cloud cloud-3">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <div class="rain"></div>
+            </div>
+            <div class="ground">
+                <div class="field">
+                    <div class="crop-row"></div>
+                    <div class="crop-row"></div>
+                    <div class="crop-row"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weather Content -->
+    <section class="page-content">
+        <div class="container">
+            <h2 class="section-title">Weather Intelligence</h2>
+            <p class="section-subtitle">Plan your farming activities with accurate forecasts and weather-based recommendations</p>
+            
+            <!-- Weather Alert -->
+            <div class="weather-alert">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="alert-content">
+                    <h3>Weather Advisory</h3>
+                    <p>Heavy rainfall expected in the next 48 hours. Consider delaying irrigation and securing vulnerable crops.</p>
+                </div>
+                <button class="btn btn-outline" onclick="dismissAlert()">Dismiss</button>
+            </div>
+
+            <!-- Current Weather -->
+            <div class="current-weather">
+                <div class="weather-main">
+                    <div class="weather-info">
+                        <h3>Current Conditions</h3>
+                        <div class="weather-temp" id="currentTemp">68°F</div>
+                        <p id="weatherCondition">Mostly Sunny</p>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Springfield Farm</span>
+                        </div>
+                    </div>
+                    <div class="weather-icon" id="weatherIcon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="weather-detail">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <div>Wind</div>
+                            <div id="windSpeed">8 mph SW</div>
+                        </div>
+                    </div>
+                    <div class="weather-detail">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <div>Humidity</div>
+                            <div id="humidity">65%</div>
+                        </div>
+                    </div>
+                    <div class="weather-detail">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <div>
+                            <div>Pressure</div>
+                            <div id="pressure">30.12 inHg</div>
+                        </div>
+                    </div>
+                    <div class="weather-detail">
+                        <i class="fas fa-eye"></i>
+                        <div>
+                            <div>Visibility</div>
+                            <div id="visibility">10 mi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast -->
+            <div class="forecast">
+                <h3><i class="fas fa-calendar-week"></i> 7-Day Forecast</h3>
+                <div class="forecast-grid" id="forecastGrid">
+                    <!-- Forecast days will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Farming Recommendations -->
+            <div class="recommendations">
+                <h3 class="section-title">Farming Recommendations</h3>
+                <div class="recommendation-cards">
+                    <div class="recommendation-card">
+                        <div class="rec-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="rec-content">
+                            <h4>Irrigation Schedule</h4>
+                            <p>With 0.2 inches of rain yesterday, delay irrigation until soil moisture drops below 60%.</p>
+                        </div>
+                    </div>
+                    <div class="recommendation-card">
+                        <div class="rec-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="rec-content">
+                            <h4>Planting Window</h4>
+                            <p>Optimal conditions for planting tomatoes in the next 3 days. Soil temperature is ideal.</p>
+                        </div>
+                    </div>
+                    <div class="recommendation-card">
+                        <div class="rec-icon">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <div class="rec-content">
+                            <h4>Pest Control</h4>
+                            <p>High humidity may increase fungal diseases. Consider preventive fungicide application.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Impact Analysis -->
+            <div class="impact-analysis">
+                <h3 class="section-title">Weather Impact Analysis</h3>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <h4><i class="fas fa-leaf"></i> Crop Impact</h4>
+                        <div class="impact-meter">
+                            <div class="meter-label">
+                                <span>Low</span>
+                                <span>High</span>
+                            </div>
+                            <div class="meter-bar">
+                                <div class="meter-fill" style="width: 30%;"></div>
+                            </div>
+                        </div>
+                        <p>Current weather conditions are favorable for most crops with minimal risk.</p>
+                    </div>
+                    <div class="impact-card">
+                        <h4><i class="fas fa-cow"></i> Livestock Impact</h4>
+                        <div class="impact-meter">
+                            <div class="meter-label">
+                                <span>Low</span>
+                                <span>High</span>
+                            </div>
+                            <div class="meter-bar">
+                                <div class="meter-fill" style="width: 20%;"></div>
+                            </div>
+                        </div>
+                        <p>Mild temperatures reduce heat stress on livestock. Ideal conditions for outdoor grazing.</p>
+                    </div>
+                    <div class="impact-card">
+                        <h4><i class="fas fa-tractor"></i> Field Work</h4>
+                        <div class="impact-meter">
+                            <div class="meter-label">
+                                <span>Poor</span>
+                                <span>Ideal</span>
+                            </div>
+                            <div class="meter-bar">
+                                <div class="meter-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <p>Dry conditions make fields suitable for machinery. Good window for planting and harvesting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                &copy; 2023 AgriSmart Pro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/weather.js"></script>
+</body>
+</html>
