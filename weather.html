@@ -51,6 +51,7 @@
                         </ul>
                     </li>
                     <li><a href="weather.html" class="nav-link active">Weather</a></li>
+                    <li><a href="market.html" class="nav-link">Market</a></li>
                 </ul>
             </nav>
             <div class="user-actions">
@@ -112,11 +113,11 @@
                 <div class="weather-main">
                     <div class="weather-info">
                         <h3>Current Conditions</h3>
-                        <div class="weather-temp" id="currentTemp">68°F</div>
-                        <p id="weatherCondition">Mostly Sunny</p>
+                        <div class="weather-temp" id="currentTemp">--°C</div>
+                        <p id="weatherCondition">Fetching live weather…</p>
                         <div class="location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Springfield Farm</span>
+                            <span id="locationName">Lusaka, Zambia</span>
                         </div>
                     </div>
                     <div class="weather-icon" id="weatherIcon">
@@ -129,28 +130,28 @@
                         <i class="fas fa-wind"></i>
                         <div>
                             <div>Wind</div>
-                            <div id="windSpeed">8 mph SW</div>
+                            <div id="windSpeed">-- km/h</div>
                         </div>
                     </div>
                     <div class="weather-detail">
                         <i class="fas fa-tint"></i>
                         <div>
                             <div>Humidity</div>
-                            <div id="humidity">65%</div>
+                            <div id="humidity">--%</div>
                         </div>
                     </div>
                     <div class="weather-detail">
                         <i class="fas fa-compress-arrows-alt"></i>
                         <div>
                             <div>Pressure</div>
-                            <div id="pressure">30.12 inHg</div>
+                            <div id="pressure">-- hPa</div>
                         </div>
                     </div>
                     <div class="weather-detail">
                         <i class="fas fa-eye"></i>
                         <div>
                             <div>Visibility</div>
-                            <div id="visibility">10 mi</div>
+                            <div id="visibility">-- km</div>
                         </div>
                     </div>
                 </div>
@@ -158,7 +159,19 @@
 
             <!-- Forecast -->
             <div class="forecast">
-                <h3><i class="fas fa-calendar-week"></i> 7-Day Forecast</h3>
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+                    <h3 style="margin:0;"><i class="fas fa-calendar-week"></i> 7-Day Forecast</h3>
+                    <div>
+                        <button id="weather-settings-toggle" class="btn btn-outline"><i class="fas fa-gear"></i> Location</button>
+                    </div>
+                </div>
+                <div id="weather-settings" class="feed-settings-panel" style="display:none;margin-top:10px;">
+                    <div class="form-group">
+                        <label for="weather-location">City, Country</label>
+                        <input id="weather-location" placeholder="e.g., Lusaka, Zambia">
+                    </div>
+                    <button id="save-weather-settings" class="btn">Save & Refresh</button>
+                </div>
                 <div class="forecast-grid" id="forecastGrid">
                     <!-- Forecast days will be populated by JavaScript -->
                 </div>

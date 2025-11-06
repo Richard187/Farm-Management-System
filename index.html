@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body>
     <!-- Header -->
@@ -52,6 +53,7 @@
                         </ul>
                     </li>
                     <li><a href="weather.html" class="nav-link">Weather</a></li>
+                    <li><a href="market.html" class="nav-link">Market</a></li>
                 </ul>
             </nav>
             <div class="user-actions">
@@ -148,31 +150,35 @@
                 </div>
             </div>
 
-            <!-- AI Assistant -->
-            <div class="ai-assistant">
-                <div class="ai-header">
-                    <div class="ai-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div>
-                        <h2>AgriAI Assistant</h2>
-                        <p>Ask any farming-related question and get instant AI-powered advice</p>
-                    </div>
-                </div>
-                
-                <div class="chat-container" id="chatContainer">
-                    <div class="message ai-message">
-                        Hello! I'm your AgriAI assistant. I can help with crop advice, livestock management, weather impacts, financial planning, and much more. What would you like to know today?
-                    </div>
-                </div>
-                
-                <div class="chat-input">
-                    <input type="text" id="userInput" placeholder="Ask a farming question...">
-                    <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
-                </div>
-            </div>
+
         </div>
     </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggle">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <span class="chatbot-status"></span>
+            <div>
+                <div class="chatbot-title">AgriBot AI</div>
+                <div class="chatbot-subtitle">Precision Farming Assistant</div>
+            </div>
+            <button class="chatbot-close" aria-label="Close chat">&times;</button>
+        </div>
+        <div class="suggestions">
+            <button class="suggestion-chip" data-msg="Recommend planting dates for maize">Planting dates for maize</button>
+            <button class="suggestion-chip" data-msg="Create a weekly task plan for irrigation">Irrigation task plan</button>
+            <button class="suggestion-chip" data-msg="What feed schedule for dairy cattle?">Dairy feed schedule</button>
+            <button class="suggestion-chip" data-msg="Analyze weather impact on spraying next 3 days">Weather & spraying</button>
+        </div>
+        <div class="chatbot-messages"></div>
+        <div class="chatbot-input">
+            <input type="text" placeholder="Ask a question...">
+            <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -211,14 +217,14 @@
             </div>
             
             <div class="copyright">
-                &copy; 2023 AgriSmart Pro. All rights reserved.
+                &copy; 2025 AgriSmart Pro. All rights reserved.
             </div>
         </div>
     </footer>
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content auth-3d">
             <div class="modal-header">
                 <h2><i class="fas fa-seedling"></i> Welcome Back to AgriSmart Pro</h2>
                 <span class="close" onclick="closeLoginModal()">&times;</span>
@@ -254,11 +260,15 @@
                     <p>Don't have an account? <a href="signup.html" onclick="closeLoginModal()">Sign up here</a></p>
                 </div>
             </div>
+            <div class="auth-float a1"></div>
+            <div class="auth-float a2"></div>
+            <div class="auth-float a3"></div>
         </div>
     </div>
 
     <script src="javascript/main.js"></script>
     <script src="javascript/dashboard.js"></script>
     <script src="javascript/auth.js"></script>
+    <script src="javascript/chatbot.js" defer></script>
 </body>
 </html>
