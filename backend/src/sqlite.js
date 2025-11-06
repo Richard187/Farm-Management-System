@@ -17,7 +17,8 @@ export function getDatabase() {
 
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
-  const dbFile = join(__dirname, '..', 'data', 'farm.sqlite');
+  const dataDir = process.env.DATA_DIR || join(__dirname, '..', 'data');
+  const dbFile = join(dataDir, 'farm.sqlite');
   ensureDirectoriesExist(dbFile);
 
   const db = new Database(dbFile);
