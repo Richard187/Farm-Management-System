@@ -4,6 +4,9 @@
   "description": "Farm Management API (Express + SQLite)",
   "main": "src/server.js",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",

@@ -75,6 +75,24 @@ $env:OPENAI_API_KEY="YOUR_KEY_HERE"  # PowerShell on Windows
 npm run dev
 ```
 
+## Deploy on Render
+
+This repo includes `render.yaml` for one-click deploy.
+
+Key points:
+- Service type: Node Web Service
+- Build command: `cd backend && npm install`
+- Start command: `cd backend && npm start`
+- Persistent Disk: mounted at `/var/data`
+- Env var `DATA_DIR` points SQLite to `/var/data` so your DB persists across deploys
+
+Steps:
+1) Push this repo to GitHub/GitLab
+2) On Render: New + → Blueprint, select the repo
+3) Review `render.yaml` and create resources
+4) After deploy, visit `/health` to verify status
+5) Optional: add `OPENAI_API_KEY` under Environment → Add Secret
+
 
 
 
