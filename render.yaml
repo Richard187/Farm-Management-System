@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: farm-management-api
+    env: node
+    plan: free
+    buildCommand: |
+      cd backend
+      npm install
+    startCommand: |
+      cd backend
+      npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: sqlite-data
+      mountPath: /var/data
+      sizeGB: 1
+
