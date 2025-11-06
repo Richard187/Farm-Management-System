@@ -1,0 +1,236 @@
+/* Crop Planning Specific Styles */
+.crop-planning .page-content {
+    background-color: #f5f7fa;
+}
+
+/* Background Simulation for Crop Planning */
+.crop-simulation {
+    background-image: url('../images/farmer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.planting-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field {
+    width: 80%;
+    height: 200px;
+    background: #8d6e63;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.soil {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #5d4037, #8d6e63);
+}
+
+.tractor {
+    position: absolute;
+    bottom: 20px;
+    left: -50px;
+    font-size: 3rem;
+    color: var(--secondary);
+    animation: drive 15s linear infinite;
+}
+
+.plants {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.plant {
+    position: absolute;
+    width: 20px;
+    height: 0;
+    background: var(--primary);
+    border-radius: 10px 10px 0 0;
+    bottom: 0;
+    animation: grow 8s ease-in-out infinite;
+}
+
+.plant:nth-child(1) { animation-delay: 0s; }
+.plant:nth-child(2) { animation-delay: 1s; }
+.plant:nth-child(3) { animation-delay: 2s; }
+.plant:nth-child(4) { animation-delay: 3s; }
+.plant:nth-child(5) { animation-delay: 4s; }
+
+@keyframes drive {
+    0% { left: -50px; }
+    100% { left: 100%; }
+}
+
+@keyframes grow {
+    0%, 100% { height: 0; }
+    50% { height: 60px; }
+}
+
+/* Planning Cards */
+.planning-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.plan-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.plan-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.crop-selector {
+    margin: 20px 0;
+}
+
+.crop-selector select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.planting-dates {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.irrigation-controls {
+    margin: 20px 0;
+}
+
+.moisture-level {
+    margin-bottom: 15px;
+}
+
+.moisture-bar {
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.moisture-fill {
+    height: 100%;
+    background: var(--info);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.rotation-plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.rotation-year {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.rotation-year h4 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+/* Calendar */
+.calendar-container {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day {
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    background: #f5f5f5;
+    font-weight: 500;
+}
+
+.calendar-date {
+    padding: 15px 10px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.calendar-date:hover {
+    background: #e8f5e9;
+}
+
+.calendar-date.planting {
+    background: #e8f5e9;
+    border: 1px solid var(--primary);
+}
+
+.calendar-date.harvest {
+    background: #fff3e0;
+    border: 1px solid var(--secondary);
+}
+
+.activity-tag {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    background: var(--primary);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+}

@@ -1,0 +1,424 @@
+/* Livestock Specific Styles */
+:root {
+    --primary: var(--leaf-500);
+    --primary-light: var(--leaf-300);
+    --primary-dark: var(--grass-700);
+    --accent: var(--grain-400);
+    --gradient: linear-gradient(135deg, var(--leaf-600) 0%, var(--leaf-400) 100%);
+}
+.livestock .page-content {
+    background-color: #f5f7fa;
+}
+
+/* Background Simulation for Livestock */
+.livestock-simulation {
+    background-image: url('../images/Mombe.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pasture-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pasture {
+    width: 80%;
+    height: 300px;
+    background: linear-gradient(to bottom, #7cb342, #8bc34a);
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, #689f38, #8bc34a);
+}
+
+.animals {
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    height: 100px;
+}
+
+.animal {
+    position: absolute;
+    font-size: 3rem;
+    bottom: 0;
+    animation: graze 8s ease-in-out infinite;
+}
+
+.animal.cow {
+    color: #795548;
+    animation-delay: 0s;
+}
+
+.animal.chicken {
+    color: #ffeb3b;
+    animation-delay: 2s;
+    font-size: 2rem;
+}
+
+.animal.pig {
+    color: #e91e63;
+    animation-delay: 4s;
+}
+
+.barn {
+    position: absolute;
+    right: 50px;
+    bottom: 60px;
+    font-size: 4rem;
+    color: #8d6e63;
+}
+
+@keyframes graze {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(-20px) rotate(-5deg); }
+    50% { transform: translateX(20px) rotate(5deg); }
+    75% { transform: translateX(-10px) rotate(-3deg); }
+}
+
+/* Livestock Overview */
+.livestock-overview {
+    margin-bottom: 40px;
+}
+
+.livestock-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.stat-label {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Livestock Grid */
+.livestock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.livestock-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.livestock-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.livestock-header {
+    padding: 20px;
+    background: var(--gradient);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.livestock-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.livestock-body {
+    padding: 20px;
+}
+
+.livestock-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.health-indicator {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.health-bar {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.production-data {
+    margin: 20px 0;
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.data-item:last-child {
+    border-bottom: none;
+}
+
+/* Health Monitoring */
+.health-monitoring {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.monitoring-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.monitoring-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.monitoring-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.alert-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.alert-status.normal {
+    background: #e8f5e9;
+    color: var(--primary);
+}
+
+.alert-status.warning {
+    background: #fff3e0;
+    color: var(--warning);
+}
+
+.alert-status.danger {
+    background: #ffebee;
+    color: var(--danger);
+}
+
+.progress-tracker {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-item span:first-child {
+    width: 60px;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+.progress-item span:last-child {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.vaccination-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vaccine-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.vaccine-item:last-child {
+    border-bottom: none;
+}
+
+/* Livestock Gallery */
+.livestock-gallery {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.image-overlay h4 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.image-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-image-wrapper {
+        height: 250px;
+    }
+}
